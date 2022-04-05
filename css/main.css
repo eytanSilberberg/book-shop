@@ -1,5 +1,6 @@
 body {
     overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #dffaff;
     font-family: monospace;
     margin: 0;
@@ -190,9 +191,10 @@ table {
 
 
 .modal-add-book {
-    background-color: #3c4fe060;
+    background-color: #A2BBF3;
     position: absolute;
-    top: 0;
+
+
     top: 150vh;
     width: 100vw;
     height: 100vh;
@@ -200,4 +202,10 @@ table {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s;
+}
+
+.modal-add-book.appear {
+    top: 0;
+    transition: all 0.5s;
 }

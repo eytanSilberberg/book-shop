@@ -46,14 +46,22 @@ function renderRateValue(id) {
 function _saveBooksToStorage() {
     saveToStorage(STORAGE_KEY, gBooks)
 }
-function onAddBook() {
-
-    var bookName = prompt('what is the name of the book?')
-    if (!bookName) return
-    var bookPrice = +prompt('what is the price of the book')
-    if (!bookPrice) return
-    addBook(bookName, bookPrice)
+function onAddBook(ev) {
+    ev.preventDefault()
+    // var bookName = prompt('what is the name of the book?')
+    // if (!bookName) return
+    // var bookPrice = +prompt('what is the price of the book')
+    // if (!bookPrice) return
+    // debugger
+    var elAddModal = document.querySelector('.modal-add-book')
+    var bookName = document.querySelector('input[name="bookName"]')
+    var bookPrice = document.querySelector('input[name="bookPrice"]')
+    var elForm = document.getElementsByName('add-form')
+    addBook(bookName.value, bookPrice.value)
+    elAddModal.classList.toggle('appear')
     renderBooks()
+    elForm.reset()
+
 }
 function onDelete(bookId) {
 
@@ -97,6 +105,13 @@ function onSetLang(lang) {
     if (lang === 'he') document.body.classList.add('rtl')
     else document.body.classList.remove('rtl')
     doTrans(lang)
+}
+
+function onToggleAddBookModal() {
+    var elAddModal = document.querySelector('.modal-add-book')
+    elAddModal.classList.toggle('appear')
+    console.log(elAddModal)
+
 }
 
 

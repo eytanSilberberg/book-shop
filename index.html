@@ -13,7 +13,8 @@
 </head>
 
 <body onload="init()">
-    <button data-trans="button" class="add-book" onclick="onAddBook()">Add a book to the list</button>
+    <!-- <button data-trans="button" class="add-book" onclick="onAddBook()">Add a book to the list</button> -->
+    <button data-trans="button" class="add-book" onclick="onToggleAddBookModal()">Add a book to the list</button>
     <div class="language-wrapper">
         <span data-trans="language">choose a language to display</span>
         <select onchange="onSetLang(this.value)">
@@ -49,12 +50,12 @@
     </div>
 
     <div class="modal-add-book">
-        <button></button>
+        <button onclick="onToggleAddBookModal()">X</button>
         <h2>You may add your book</h2>
-        <form action="">
+        <form name="add-form" onsubmit="onAddBook(event)">
 
-            <span>what is the name of the book </span><input type="text"><br>
-            <span>what is the price of the book</span><input type="text"><br>
+            <span>what is the name of the book </span><input name="bookName" type="text"><br>
+            <span>what is the price of the book</span><input name="bookPrice" type="text"><br>
             <button>Add book</button>
         </form>
     </div>
