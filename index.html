@@ -11,6 +11,13 @@
 
 <body onload="init()">
     <button class="add-book" onclick="onAddBook()">Add a book to the list</button>
+    <div class="language-wrapper">
+        <span>choose a language to display</span>
+        <select name="language" id="lang" onchange="onSetLanguage(this.value)">
+            <option value="en-us">English</option>
+            <option value="he">Hebrew</option>
+        </select>
+    </div>
     <table border="1">
         <thead>
             <tr>

@@ -99,3 +99,34 @@ function sortBy(param) {
     _saveBooksToStorage()
     console.log(gBooks)
 }
+
+function setPriceByLang(val) {
+    gBooks = loadFromStorage(STORAGE_KEY)
+    console.log('gBooks', gBooks);
+    var books
+    // debugger
+    switch (val) {
+
+        case 'he':
+            var opt = { style: 'currency', currency: 'Ils' }
+            books = gBooks.map(book => {
+                book.price = new Intl.NumberFormat(val, opt).format(book.price)
+                return book
+            })
+            break;
+        case 'en-us':
+            // debugger
+            var opt = { style: 'currency', currency: 'Usd' }
+            books = gBooks.map(book => {
+                book.price = new Intl.NumberFormat(val, opt).format(book.price)
+                return book
+            })
+            break;
+
+
+    }
+    gBooks = books
+
+    console.log(gBooks)
+    // _saveBooksToStorage()
+}

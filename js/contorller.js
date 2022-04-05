@@ -95,3 +95,9 @@ function onSortBy(parameter) {
     renderBooks()
 }
 
+function onSetLanguage(val) {
+    setPriceByLang(val)
+
+
+    renderBooks()
+}
