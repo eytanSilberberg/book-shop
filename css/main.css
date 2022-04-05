@@ -1,0 +1,179 @@
+body{
+    overflow-x: hidden;
+    background-color: #dffaff;
+    font-family:monospace;
+    margin:0;
+}
+
+table{
+    background-color: rgba(255, 247, 247, 0.959);
+    width: 500px;
+height: auto;
+}
+
+
+.modal {
+    padding-right: 30px;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
+    justify-content: center;
+    position: absolute;
+    left: 150%;
+    height: 80vh;
+    text-align: center;
+    background-color: rgb(235, 166, 61);
+    top: 0;
+    width: 400px;
+    min-width: 300px;
+    
+    transition: left .5s;
+
+}
+.modal.open{
+    left: 67%;
+    transition: left .5s;
+}
+
+.rate-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+.rate-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    width: 80px;
+    height: 25px;
+    border: 1px solid grey;
+    
+}
+.btn-update{
+
+    background-color: #adff2f;
+    
+}
+
+.btn-delete{
+    background-color: rgb(255, 60, 60);
+    color: rgb(255, 234, 234);
+}
+
+.btn-read{
+    background-color: rgb(148, 148, 255);
+}
+
+.btn-table{
+    width: 80px;
+    border-radius: 20px;
+    
+}
+.btn-rate{
+
+    padding: 0;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    margin: 0 8px;
+}
+
+
+
+
+
+
+.add-book {
+
+    margin: 20px;
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.add-book:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.add-book:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.add-book:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+.balls{
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    bottom: 0;
+    width: 30%;
+    margin: 0;
+}
+.ball{
+
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 150px;
+    
+}
+
+.left-ball{
+    
+   
+    left: 0;
+    width: 100%;
+    background-color: #5468ff;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+}
+.right-ball{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+   border-radius: 100px;
+   border-left:40px solid transparent;
+    right: 0;
+
+    
+    background-color: #54ff79;
+    transition: all 0.2s;
+}
+
+.ball-right:hover{
+    border-left:70px solid transparent;
+}
