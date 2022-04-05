@@ -82,15 +82,18 @@ function getBookById(id) {
 }
 
 function sortBy(param) {
+    console.log(param)
     switch (param) {
         case 'alphbetical':
             gBooks.sort((bookA, bookB) => (bookA.title).localeCompare(bookB.title))
+            console.log(gBooks)
 
             break;
         case 'price':
 
             // gBooks.sort((a, b) => b.price - a.price)
             gBooks.sort((bookA, bookB) => bookB.price - bookA.price)
+            console.log(gBooks)
 
 
             break;
@@ -101,16 +104,13 @@ function sortBy(param) {
 }
 
 function setPriceByLang(val) {
+    console.log('gBooks', gBooks)
     gBooks = loadFromStorage(STORAGE_KEY)
-    console.log('gBooks', gBooks);
     var books
     var currency = 'usd'
-    books = gBooks.map(book => {
-        book.price = new Intl.NumberFormat(val, { style: 'currency', currency: currency }).format(book.price)
-        return book
+
+    var elPrice = document.querySelectorAll('[data-price]')
+    elPrice.forEach(el => {
+        el.innerText = new Intl.NumberFormat(val, { style: 'currency', currency: currency }).format(el.dataset.price)
     })
-    gBooks = books
-
-
-    // _saveBooksToStorage()
 }

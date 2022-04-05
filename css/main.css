@@ -187,3 +187,17 @@ table {
 .ball-right:hover {
     border-left: 70px solid transparent;
 }
+
+
+.modal-add-book {
+    background-color: #3c4fe060;
+    position: absolute;
+    top: 0;
+    top: 150vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
