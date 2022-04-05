@@ -34,9 +34,27 @@ const gTrans = {
     delete: {
         'en-us': 'delete',
         he: 'הסר'
+    },
+    page: {
+        'en-us': 'Next Page',
+        he: 'עמוד הבא'
+    },
+    addBookBtn: {
+        'en-us': 'Add book',
+        he: 'הוסף ספר'
+    },
+    bookName: {
+        'en-us': 'what is the name of the book',
+        he: 'מה שם הספר  '
+    }, bookPrice: {
+        'en-us': 'what is the price of the book',
+        he: 'מה מחיר הספר'
+    }, addBookH2: {
+        'en-us': 'You may add your book',
+        he: 'תוסיף את הספר אחשלי'
+
     }
 }
-
 var gCurrLang = 'en-us'
 
 function doTrans(lang) {

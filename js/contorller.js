@@ -56,11 +56,13 @@ function onAddBook(ev) {
     var elAddModal = document.querySelector('.modal-add-book')
     var bookName = document.querySelector('input[name="bookName"]')
     var bookPrice = document.querySelector('input[name="bookPrice"]')
-    var elForm = document.getElementsByName('add-form')
+    var elForm = document.querySelector('.add-form')
+    console.log(elForm)
     addBook(bookName.value, bookPrice.value)
     elAddModal.classList.toggle('appear')
     renderBooks()
     elForm.reset()
+    // debugger
 
 }
 function onDelete(bookId) {
@@ -115,3 +117,9 @@ function onToggleAddBookModal() {
 }
 
 
+
+
+function onNextPage() {
+    nextPage()
+    renderBooks()
+}

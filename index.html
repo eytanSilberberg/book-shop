@@ -35,7 +35,7 @@
 
         </tbody>
     </table>
-
+    <button data-trans="page" onclick="onNextPage()">next page</button>
 
     <div class="modal">
         <button onclick="onCloseModal()">X</button>
@@ -51,12 +51,12 @@
 
     <div class="modal-add-book">
         <button onclick="onToggleAddBookModal()">X</button>
-        <h2>You may add your book</h2>
-        <form name="add-form" onsubmit="onAddBook(event)">
+        <h2 data-trans="addBookH2">You may add your book</h2>
+        <form class="add-form" onsubmit="onAddBook(event)">
 
-            <span>what is the name of the book </span><input name="bookName" type="text"><br>
-            <span>what is the price of the book</span><input name="bookPrice" type="text"><br>
-            <button>Add book</button>
+            <span data-trans="bookName">what is the name of the book </span><input name="bookName" type="text"><br>
+            <span data-trans="bookPrice">what is the price of the book</span><input name="bookPrice" type="text"><br>
+            <button data-trans="addBookBtn" onclick="onNextPage()">Add book</button>
         </form>
     </div>
     <div class="balls">

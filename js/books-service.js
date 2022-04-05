@@ -1,13 +1,14 @@
 'use strict'
 var STORAGE_KEY = 'booksDB'
-
+const PAGE_SIZE = 5
+var gPageIdx = 0
 var gBooks = []
 var gBooksIfEmpty = ['book of mormon', 'sweet waters']
 _createBooks()
 
-function getBooks() {
-    return gBooks
-}
+// function getBooks() {
+//     return gBooks
+// }
 
 
 
@@ -113,4 +114,16 @@ function setPriceByLang(val) {
     elPrice.forEach(el => {
         el.innerText = new Intl.NumberFormat(val, { style: 'currency', currency: currency }).format(el.dataset.price)
     })
+}
+
+function nextPage() {
+    gPageIdx++
+    if (gPageIdx * PAGE_SIZE >= gBooks.length) {
+        gPageIdx = 0;
+    }
+}
+function getBooks() {
+    const idxStart = gPageIdx * PAGE_SIZE
+    var books = gBooks.slice(idxStart, idxStart + PAGE_SIZE)
+    return books;
 }
