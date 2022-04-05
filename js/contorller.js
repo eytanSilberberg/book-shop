@@ -3,6 +3,7 @@
 
 'use strict'
 function init() {
+    onSetLang(gCurrLang)
     renderBooks()
 }
 
@@ -15,9 +16,9 @@ function renderBooks() {
     <td>${book.id}</td>
     <td>${book.title}</td>
     <td>${book.price}</td>
-    <td><button class="btn-table btn-read"  onclick="onRead('${book.id}')">read</button></td>
-    <td><button class="btn-table btn-update"  onclick="onUpdate('${book.id}')">update</button></td>
-    <td><button class="btn-table btn-delete"  onclick="onDelete('${book.id}')">delete</button></td>
+    <td><button data-trans="read" class="btn-table btn-read"  onclick="onRead('${book.id}')">read</button></td>
+    <td><button data-trans="update" class="btn-table btn-update"  onclick="onUpdate('${book.id}')">update</button></td>
+    <td><button data-trans="delete" class="btn-table btn-delete"  onclick="onDelete('${book.id}')">delete</button></td>
 </tr>`)
     elTbody.innerHTML = strHTML.join('')
     console.log('i am here')
@@ -62,12 +63,14 @@ function onDelete(bookId) {
 
     deleteBook(bookId)
     renderBooks()
+    doTrans(gCurrLang)
 }
 
 function onUpdate(id) {
     var price = +prompt('what is the new price?')
     UpdateBook(id, price)
     renderBooks()
+    doTrans(gCurrLang)
 }
 
 function onRead(id) {
@@ -93,11 +96,16 @@ function onSortBy(parameter) {
     console.log(parameter)
     sortBy(parameter)
     renderBooks()
+    doTrans(gCurrLang)
 }
 
-function onSetLanguage(val) {
-    setPriceByLang(val)
-
-
+function onSetLang(lang) {
+    setLang(lang)
+    // setPriceByLang(lang)
+    if (lang === 'he') document.body.classList.add('rtl')
+    else document.body.classList.remove('rtl')
     renderBooks()
+    doTrans(lang)
 }
+
+
